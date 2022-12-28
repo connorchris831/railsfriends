@@ -1,0 +1,27 @@
+  <table class="table table-bordered">
+    <thead class="table-dark">
+      <th>name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Twitter</th>
+      <th>User Id</th>
+      <th colspan="3"></th>
+    </thead>
+    <tbody>
+    <% friends.each do |friend| %>
+      <% if current_user == friend.user %>
+      <tr>
+        <td><%= link_to friend.first_name + ' '+ friend.last_name, friend %></td>
+        <td><%= friend.email %></td>
+        <td><%= friend.phone %></td>
+        <td><%= friend.twitter %></td>
+        <td><%= friend.user_id %></td>
+        <td><%= link_to "Delete", friend, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm"  %></td>
+      </tr>
+      <% end %>
+    <% end %>
+    </tbody>
+  </table>
+
+
+

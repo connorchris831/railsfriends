@@ -1,0 +1,10 @@
+<div id="friends">
+
+    <% if user_signed_in? %>
+        <%= render "friends/friend", friends: @friends %>
+        <%= link_to "New friend", new_friend_path, class:"btn btn-primary" %>
+    <% else %>
+        	<h1>Hello World!</h1>
+	        This is my first Rails Webpage...
+    <% end %>
+</div>
